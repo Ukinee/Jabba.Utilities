@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>YourPackageName</id>
+    <version>1.0.0</version>
+    <authors>YourName</authors>
+    <owners>YourName</owners>
+    <description>Your package description</description>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/Ukinee/Jabba.Utilities</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+  </metadata>
+  <files>
+    <file src="bin\Release\net6.0\YourLibrary.dll" target="lib\net6.0" />
+  </files>
+</package>

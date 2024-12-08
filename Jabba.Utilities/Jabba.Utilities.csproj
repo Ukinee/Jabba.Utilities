@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="..\Jabba.Helpers.Files\bin\Release\net8.0\Jabba.Helpers.Files.dll" Pack="true" PackagePath="lib\net8.0"/>
+        <Content Include="..\Jabba.Common\bin\Release\net8.0\Jabba.Common.dll" Pack="true" PackagePath="lib\net8.0"/>
+        <Content Include="..\Jabba.Complex.BufferedConsumer\bin\Release\net8.0\Jabba.Complex.BufferedConsumer.dll" Pack="true" PackagePath="lib\net8.0"/>
+        <Content Include="..\Jabba.Complex.LongOperations.Abstractions\bin\Release\net8.0\Jabba.Complex.LongOperations.Abstractions.dll" Pack="true" PackagePath="lib\net8.0"/>
+        <Content Include="..\Jabba.Complex.LongOperations.Implementations\bin\Release\net8.0\Jabba.Complex.LongOperations.Implementations.dll" Pack="true" PackagePath="lib\net8.0"/>
+        <Content Include="..\Jabba.Infrastructure.StateMachine\bin\Release\net8.0\Jabba.Infrastructure.StateMachine.dll" Pack="true" PackagePath="lib\net8.0"/>
+        <Content Include="..\Jabba.Infrastructure.StateMachine.Async\bin\Release\net8.0\Jabba.Infrastructure.StateMachine.Async.dll" Pack="true" PackagePath="lib\net8.0"/>
+        <Content Include="..\Jabba.Infrastructure.StateMachine.Async.Transitioned\bin\Release\net8.0\Jabba.Infrastructure.StateMachine.Async.Transitioned.dll" Pack="true" PackagePath="lib\net8.0"/>
+        <Content Include="..\Jabba.Infrastructure.StateMachine.Common\bin\Release\net8.0\Jabba.Infrastructure.StateMachine.Common.dll" Pack="true" PackagePath="lib\net8.0"/>
+        <Content Include="..\Jabba.Infrastructure.StateMachine.Transitioned\bin\Release\net8.0\Jabba.Infrastructure.StateMachine.Transitioned.dll" Pack="true" PackagePath="lib\net8.0"/>
+        <Content Include="..\Jabba.Infrastructure.SignalBus\bin\Release\net8.0\Jabba.Infrastructure.SignalBus.dll" Pack="true" PackagePath="lib\net8.0"/>
+        <Content Include="..\Jabba.Infrastructure.SignalBus.Generic\bin\Release\net8.0\Jabba.Infrastructure.SignalBus.Generic.dll" Pack="true" PackagePath="lib\net8.0"/>
+        <Content Include="..\Jabba.Services.DateTime\bin\Release\net8.0\Jabba.Services.DateTime.dll" Pack="true" PackagePath="lib\net8.0"/>
+        <Content Include="..\Jabba.Services.Random\bin\Release\net8.0\Jabba.Services.Random.dll" Pack="true" PackagePath="lib\net8.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.0"/>
+    </ItemGroup>
+</Project>

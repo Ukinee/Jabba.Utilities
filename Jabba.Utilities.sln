@@ -36,6 +36,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jabba.Complex.LongOperation
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jabba.Complex.LongOperations.Abstractions", "Jabba.Complex.LongOperations.Abstractions\Jabba.Complex.LongOperations.Abstractions.csproj", "{760C994B-846D-4B73-BABF-92145705D33A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jabba.Utilities", "Jabba.Utilities\Jabba.Utilities.csproj", "{DA86033F-2317-40DC-A4D6-EB169DDA4855}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,14 @@ Global
 		{760C994B-846D-4B73-BABF-92145705D33A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{760C994B-846D-4B73-BABF-92145705D33A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{760C994B-846D-4B73-BABF-92145705D33A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC11EE33-6E21-461C-8614-3C8954AD1C45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC11EE33-6E21-461C-8614-3C8954AD1C45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC11EE33-6E21-461C-8614-3C8954AD1C45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC11EE33-6E21-461C-8614-3C8954AD1C45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA86033F-2317-40DC-A4D6-EB169DDA4855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA86033F-2317-40DC-A4D6-EB169DDA4855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA86033F-2317-40DC-A4D6-EB169DDA4855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA86033F-2317-40DC-A4D6-EB169DDA4855}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F5593F12-9EDB-4616-BB72-14DE4FC4C3D4} = {807FF100-26C2-404F-A1CE-82A879C94F4A}
