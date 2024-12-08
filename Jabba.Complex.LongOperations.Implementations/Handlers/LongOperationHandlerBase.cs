@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel;
+using Jabba.Complex.LongOperations.Abstractions;
 using Jabba.Complex.LongOperations.Utils;
 using Microsoft.Extensions.Logging;
 using Utilities.Frameworks.ComponentModel;
 
 namespace Jabba.Complex.LongOperations.Handlers
 {
-    public abstract class LongOperationHandlerBase : NotifyPropertyChanged, IDisposable
+    public abstract class LongOperationHandlerBase : NotifyPropertyChanged, ITaskHandler, IDisposable
     {
         private readonly ILogger<LongOperationHandlerBase> _logger;
 
@@ -17,7 +18,7 @@ namespace Jabba.Complex.LongOperations.Handlers
 
         private object _lock = new object();
 
-        private string _job = string.Empty;
+        private string _stage = string.Empty;
         private bool _isDisposed;
 
         protected LongOperationHandlerBase(ILogger<LongOperationHandlerBase> logger, string name)
@@ -47,10 +48,10 @@ namespace Jabba.Complex.LongOperations.Handlers
             }
         }
 
-        public string Job
+        public string Stage
         {
-            get => _job;
-            protected set
+            get => _stage;
+            set
             {
                 ObjectDisposedException.ThrowIf(_isDisposed, this);
 
@@ -59,9 +60,9 @@ namespace Jabba.Complex.LongOperations.Handlers
                     value = string.Empty;
                 }
 
-                if (SetField(ref _job, value))
+                if (SetField(ref _stage, value))
                 {
-                    _logger.LongOperationHandler_JobChanged(Name, value);
+                    _logger.LongOperationHandler_StageChanged(Name, value);
                 }
             }
         }

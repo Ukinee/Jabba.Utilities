@@ -4,10 +4,12 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>Jabba.Complex.LongOperations</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Jabba.Common\Jabba.Common.csproj" />
+      <ProjectReference Include="..\Jabba.Complex.LongOperations.Abstractions\Jabba.Complex.LongOperations.Abstractions.csproj" />
     </ItemGroup>
 
     <ItemGroup>

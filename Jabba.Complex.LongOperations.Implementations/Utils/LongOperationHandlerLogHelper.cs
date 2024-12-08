@@ -4,7 +4,7 @@ namespace Jabba.Complex.LongOperations.Utils
 {
     public static partial class LogHelper
     {
-        public static void LongOperationHandler_JobChanged(this ILogger logger, string name, string newValue)
+        public static void LongOperationHandler_StageChanged(this ILogger logger, string name, string newValue)
         {
             logger.LogInformation("[{HandlerName}] job changed to {State}", name, newValue);
         }
