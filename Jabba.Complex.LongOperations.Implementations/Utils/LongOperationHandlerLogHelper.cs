@@ -4,9 +4,14 @@ namespace Jabba.Complex.LongOperations.Utils
 {
     public static partial class LogHelper
     {
-        public static void LongOperationHandler_StageChanged(this ILogger logger, string name, string newValue)
+        public static void LongOperationHandler_StageEnd(this ILogger logger, string name, string stage, TimeSpan elapsed)
         {
-            logger.LogInformation("[{HandlerName}] job changed to {State}", name, newValue);
+            logger.LogInformation("[{HandlerName}] stopped stage {Stage}. Elapsed: {Elapsed}", name, stage, elapsed);
+        }
+        
+        public static void LongOperationHandler_StageStart(this ILogger logger, string name, string stage)
+        {
+            logger.LogInformation("[{HandlerName}] started new stage {Stage}", name, stage);
         }
 
         public static void LongOperationHandler_StateChanged(this ILogger logger, string name, LongOperationState newValue)

@@ -2,5 +2,8 @@
 
 public interface ITaskHandler
 {
-    public string Stage { get; set; }
+    public string Stage { get; }
+    
+    public void StartStage(string stage);
+    public void StopStage();
 }

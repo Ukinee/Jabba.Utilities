@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics;
 using Jabba.Complex.LongOperations.Abstractions;
 using Jabba.Complex.LongOperations.Utils;
 using Microsoft.Extensions.Logging;
@@ -8,6 +9,8 @@ namespace Jabba.Complex.LongOperations.Handlers
 {
     public abstract class LongOperationHandlerBase : NotifyPropertyChanged, ITaskHandler, IDisposable
     {
+        private readonly Stopwatch _stageStopwatch = new Stopwatch();
+
         private readonly ILogger<LongOperationHandlerBase> _logger;
 
         private readonly CancellationTokenSource _immediateCancellationTokenSource = new CancellationTokenSource();
@@ -17,6 +20,7 @@ namespace Jabba.Complex.LongOperations.Handlers
         private Task? _longOperationTask;
 
         private object _lock = new object();
+        private object _stageLock = new object();
 
         private string _stage = string.Empty;
         private bool _isDisposed;
@@ -51,18 +55,29 @@ namespace Jabba.Complex.LongOperations.Handlers
         public string Stage
         {
             get => _stage;
-            set
+            private set
             {
-                ObjectDisposedException.ThrowIf(_isDisposed, this);
-
-                if (string.IsNullOrEmpty(value))
+                lock (_stageLock)
                 {
-                    value = string.Empty;
-                }
+                    ObjectDisposedException.ThrowIf(_isDisposed, this);
 
-                if (SetField(ref _stage, value))
-                {
-                    _logger.LongOperationHandler_StageChanged(Name, value);
+                    if (string.Equals(_stage, value))
+                    {
+                        return;
+                    }
+
+                    if (string.IsNullOrEmpty(value))
+                    {
+                        _stageStopwatch.Stop();
+                        _logger.LongOperationHandler_StageEnd(Name, _stage, _stageStopwatch.Elapsed);
+                    }
+                    else
+                    {
+                        _logger.LongOperationHandler_StageStart(Name, value);
+                        _stageStopwatch.Restart();
+                    }
+
+                    SetField(ref _stage, value);
                 }
             }
         }
@@ -158,6 +173,40 @@ namespace Jabba.Complex.LongOperations.Handlers
 
                 State = LongOperationState.Stopped;
             }
+        }
+
+        public void StartStage(string stage)
+        {
+            ObjectDisposedException.ThrowIf(_isDisposed, this);
+
+            if (string.IsNullOrEmpty(stage))
+            {
+                _logger.LogWarning("[{HandlerName}] : Stage name can't be empty. To stop current stage use {StopStage}", Name, nameof(StopStage));
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(Stage) == false)
+            {
+                _logger.LogInformation("[{HandlerName}] : Stage {Stage} is already running. Stopping previous stage to start {NewStage} . . .", Name, Stage, stage);
+                StopStage();
+            }
+
+            Stage = stage;
+        }
+
+        public void StopStage()
+        {
+            ObjectDisposedException.ThrowIf(_isDisposed, this);
+
+            if (string.IsNullOrEmpty(Stage))
+            {
+                _logger.LogInformation("[{HandlerName}] : {StopStage} called with empty stage.", Name, nameof(StopStage));
+
+                return;
+            }
+
+            Stage = string.Empty;
         }
 
         protected abstract Task Run(CancellationToken softToken, CancellationToken forceToken);

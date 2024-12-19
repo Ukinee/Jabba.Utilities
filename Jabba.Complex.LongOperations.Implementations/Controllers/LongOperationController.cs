@@ -37,6 +37,8 @@ public class LongOperationController
     {
         _logger = logger;
     }
+    
+    public IEnumerable<string> Names => _longOperationHandlers.Keys;
 
     public void Add(LongOperationHandlerBase handler)
     {
