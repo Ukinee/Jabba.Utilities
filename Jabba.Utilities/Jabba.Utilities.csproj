@@ -5,16 +5,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>1.0.3</Version>
+        <Version>1.1.0</Version>
     </PropertyGroup>
-
 
     <ItemGroup>
         <Content Include="..\Jabba.Helpers.Files\bin\Release\net8.0\Jabba.Helpers.Files.dll" Pack="true" PackagePath="lib\net8.0"/>
         <Content Include="..\Jabba.Common\bin\Release\net8.0\Jabba.Common.dll" Pack="true" PackagePath="lib\net8.0"/>
-        <Content Include="..\Jabba.Complex.BufferedConsumer\bin\Release\net8.0\Jabba.Complex.BufferedConsumer.dll" Pack="true" PackagePath="lib\net8.0"/>
-        <Content Include="..\Jabba.Complex.LongOperations.Abstractions\bin\Release\net8.0\Jabba.Complex.LongOperations.Abstractions.dll" Pack="true" PackagePath="lib\net8.0"/>
-        <Content Include="..\Jabba.Complex.LongOperations.Implementations\bin\Release\net8.0\Jabba.Complex.LongOperations.Implementations.dll" Pack="true" PackagePath="lib\net8.0"/>
         <Content Include="..\Jabba.Infrastructure.StateMachine\bin\Release\net8.0\Jabba.Infrastructure.StateMachine.dll" Pack="true" PackagePath="lib\net8.0"/>
         <Content Include="..\Jabba.Infrastructure.StateMachine.Async\bin\Release\net8.0\Jabba.Infrastructure.StateMachine.Async.dll" Pack="true" PackagePath="lib\net8.0"/>
         <Content Include="..\Jabba.Infrastructure.StateMachine.Async.Transitioned\bin\Release\net8.0\Jabba.Infrastructure.StateMachine.Async.Transitioned.dll" Pack="true" PackagePath="lib\net8.0"/>
