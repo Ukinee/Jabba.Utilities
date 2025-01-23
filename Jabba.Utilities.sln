@@ -34,6 +34,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jabba.Infrastructure.Abstra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jabba.Services.Serializers.Abstractions", "Jabba.Services.Serializers.Abstractions\Jabba.Services.Serializers.Abstractions.csproj", "{663C82A2-DBA0-48CC-BBAB-C83566373542}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jabba.Services.Hash", "Jabba.Services.Hash\Jabba.Services.Hash.csproj", "{D4BE4469-A4F8-4798-AE8E-A3446054242A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,10 @@ Global
 		{663C82A2-DBA0-48CC-BBAB-C83566373542}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{663C82A2-DBA0-48CC-BBAB-C83566373542}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{663C82A2-DBA0-48CC-BBAB-C83566373542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4BE4469-A4F8-4798-AE8E-A3446054242A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4BE4469-A4F8-4798-AE8E-A3446054242A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4BE4469-A4F8-4798-AE8E-A3446054242A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4BE4469-A4F8-4798-AE8E-A3446054242A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F5593F12-9EDB-4616-BB72-14DE4FC4C3D4} = {807FF100-26C2-404F-A1CE-82A879C94F4A}
@@ -100,5 +106,6 @@ Global
 		{38E6CFDF-7918-4244-BA2B-43F5CE06E3F7} = {7E926384-01B1-4C45-9ED9-10AFC9779647}
 		{CC076106-A848-47C0-97E9-86F576954BAB} = {7E926384-01B1-4C45-9ED9-10AFC9779647}
 		{663C82A2-DBA0-48CC-BBAB-C83566373542} = {7E926384-01B1-4C45-9ED9-10AFC9779647}
+		{D4BE4469-A4F8-4798-AE8E-A3446054242A} = {7E926384-01B1-4C45-9ED9-10AFC9779647}
 	EndGlobalSection
 EndGlobal
